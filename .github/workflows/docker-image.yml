@@ -30,7 +30,7 @@ jobs:
       run: HYPERFIDDLE_ELECTRIC_APP_VERSION=`git describe --tags --long --always --dirty`
       
     - name: Build the Docker image
-      run: docker build --progress=plain --build-arg VERSION="$HYPERFIDDLE_ELECTRIC_APP_VERSION" .
+      run: docker build --progress=plain --build-arg VERSION="$HYPERFIDDLE_ELECTRIC_APP_VERSION" -t mikhailusachev/electric-starter-app .
       
     - name: Docker Push
       run: docker push mikhailusachev/electric-starter-app

@@ -23,8 +23,7 @@ jobs:
         
     - name: Build the version
       run: HYPERFIDDLE_ELECTRIC_APP_VERSION=`git describe --tags --long --always --dirty`
-    - name: Clojure build
-      run: clojure -X:build uberjar :jar-name "app.jar" :version '"'$HYPERFIDDLE_ELECTRIC_APP_VERSION'"'
+      
     - name: java build
       run: java -DHYPERFIDDLE_ELECTRIC_SERVER_VERSION=$HYPERFIDDLE_ELECTRIC_APP_VERSION -jar app.jar
       
